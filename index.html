@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Numara Hizmeti</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,sans-serif;background:#f2f5f7;color:#17202a}
+    .wrap{max-width:520px;margin:auto;padding:20px}
+    .hero{background:#128c7e;color:white;border-radius:22px;padding:28px 22px;text-align:center;box-shadow:0 8px 25px #0002}
+    .hero h1{margin:0 0 8px;font-size:28px}
+    .hero p{margin:0;opacity:.95}
+    .card{background:white;border-radius:18px;padding:18px;margin-top:16px;box-shadow:0 5px 18px #0001}
+    .card h2{margin:0 0 8px;font-size:20px}
+    .card p{margin:7px 0;color:#667}
+    .btn{display:block;width:100%;border:0;border-radius:13px;padding:15px;margin-top:14px;font-size:16px;font-weight:bold;cursor:pointer;background:#25d366;color:white}
+    .btn.alt{background:#128c7e}
+    .info{font-size:13px;text-align:center;color:#667;margin:18px 5px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>📱 WhatsApp Numara Hizmeti</h1>
+      <p>Türk ve yurtdışı seçenekleri</p>
+    </div>
+
+    <div class="card">
+      <h2>🇹🇷 Türk WhatsApp</h2>
+      <p>Türkiye numarası seçenekleri</p>
+      <p>Fiyat: <strong>İletişime geçin</strong></p>
+      <button class="btn" onclick="contact('Türk WhatsApp numarası')">Bilgi Al</button>
+    </div>
+
+    <div class="card">
+      <h2>🌍 Yurtdışı WhatsApp</h2>
+      <p>Farklı ülke numarası seçenekleri</p>
+      <p>Fiyat: <strong>İletişime geçin</strong></p>
+      <button class="btn alt" onclick="contact('Yurtdışı WhatsApp numarası')">Bilgi Al</button>
+    </div>
+
+    <div class="card">
+      <h2>💬 Sipariş / Destek</h2>
+      <p>Numara, ülke ve fiyat bilgisi için bizimle iletişime geçin.</p>
+      <button class="btn" onclick="contact('Sipariş ve destek')">Telegram'dan İletişim</button>
+    </div>
+
+    <div class="info">
+      Hizmetleri yalnızca yürürlükteki yasalara ve WhatsApp kurallarına uygun şekilde kullanın.
+    </div>
+  </div>
+
+  <script>
+    // BURAYA KENDİ TELEGRAM KULLANICI ADINI YAZ.
+    // Örnek: const telegramUser = "ornek_kullanici";
+    const telegramUser = "KULLANICI_ADIN";
+
+    function contact(subject){
+      if(telegramUser === "KULLANICI_ADIN"){
+        alert("Önce index.html içindeki KULLANICI_ADIN kısmını kendi Telegram kullanıcı adınla değiştir.");
+        return;
+      }
+      const text = encodeURIComponent("Merhaba, " + subject + " hakkında bilgi almak istiyorum.");
+      window.open("https://t.me/" + telegramUser + "?text=" + text, "_blank");
+    }
+  </script>
+</body>
+</html>
