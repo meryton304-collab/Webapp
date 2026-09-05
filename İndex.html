@@ -138,6 +138,20 @@ footer a {
   text-decoration: none;
 }
 
+/* Yeni iletişim butonu stili */
+footer .contact {
+  display: inline-block;
+  margin-left: 12px;
+  margin-top: 8px;
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 nav {
   position: fixed;
   bottom: 0;
@@ -243,6 +257,7 @@ nav span {
   <a href="https://t.me/Selm3214" target="_blank" rel="noopener noreferrer">
     Telegram: @Selm3214
   </a>
+  <button class="contact" onclick="openTelegram()" aria-label="Telegram ile iletişime geç">İletişime Geç</button>
 </footer>
 
 <nav>
@@ -271,6 +286,20 @@ function searchProducts() {
 
 function newListing() {
   alert("İlan verme ekranını bir sonraki aşamada ekleyeceğiz.");
+}
+
+function openTelegram() {
+  // Telegram uygulamasını dene; çalışmazsa web'e yönlendir
+  var tgUrl = "tg://resolve?domain=Selm3214";
+  var webUrl = "https://t.me/Selm3214";
+
+  // Safari/Chrome gibi tarayıcılarda doğrudan tg://'yi açmayı dene
+  window.location.href = tgUrl;
+
+  // Eğer uygulama açılmazsa 700ms sonra web sürümünü yeni sekmede aç
+  setTimeout(function() {
+    window.open(webUrl, "_blank");
+  }, 700);
 }
 
 </script>
