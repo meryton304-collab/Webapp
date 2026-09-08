@@ -150,6 +150,15 @@ footer .contact {
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+footer .contact:hover {
+  background: #15803d;
+}
+
+footer .contact:active {
+  transform: scale(0.98);
 }
 
 nav {
@@ -289,17 +298,31 @@ function newListing() {
 }
 
 function openTelegram() {
-  // Telegram uygulamasını dene; çalışmazsa web'e yönlendir
-  var tgUrl = "tg://resolve?domain=Selm3214";
-  var webUrl = "https://t.me/Selm3214";
-
-  // Safari/Chrome gibi tarayıcılarda doğrudan tg://'yi açmayı dene
-  window.location.href = tgUrl;
-
-  // Eğer uygulama açılmazsa 700ms sonra web sürümünü yeni sekmede aç
-  setTimeout(function() {
-    window.open(webUrl, "_blank");
-  }, 700);
+  const TELEGRAM_USERNAME = "Selm3214";
+  const telegramWebUrl = "https://t.me/" + TELEGRAM_USERNAME;
+  const telegramAppUrl = "tg://resolve?domain=" + TELEGRAM_USERNAME;
+  
+  // Cihaz tipini kontrol et
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  
+  if (isMobile) {
+    // Mobil cihazda: Önce app'i dene
+    const attemptTime = Date.now();
+    
+    // Telegram app'i açmayı dene
+    window.location.href = telegramAppUrl;
+    
+    // 1.5 saniye sonra app'in açılmadığını varsayıp web'e yönlendir
+    setTimeout(function() {
+      // App açılı mı diye kontrol etmek için basit bir yöntem
+      if (Date.now() - attemptTime > 1400) {
+        window.location.href = telegramWebUrl;
+      }
+    }, 1500);
+  } else {
+    // Desktop: Doğrudan web sürümünü yeni sekmede aç
+    window.open(telegramWebUrl, "_blank", "width=600,height=700");
+  }
 }
 
 </script>
