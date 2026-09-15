@@ -15,12 +15,16 @@
     .card h2{margin:0 0 8px;font-size:20px;color:#2c3e50}
     .card p{margin:7px 0;color:#667}
     .price{font-size:18px;font-weight:bold;color:#e74c3c;margin:10px 0}
-    .btn{display:block;width:100%;border:0;border-radius:13px;padding:15px;margin-top:14px;font-size:16px;font-weight:bold;cursor:pointer;background:#e74c3c;color:white}
+    .btn{display:block;width:100%;border:0;border-radius:13px;padding:15px;margin-top:14px;font-size:16px;font-weight:bold;cursor:pointer;background:#25d366;color:white;text-decoration:none}
     .btn.alt{background:#3498db}
+    .btn.phone{background:#e74c3c}
     .info{font-size:13px;text-align:center;color:#667;margin:18px 5px}
     .features{list-style:none;padding:0;margin:10px 0}
     .features li{padding:8px 0;border-bottom:1px solid #ecf0f1}
     .features li:before{content:"✓ ";color:#e74c3c;font-weight:bold;margin-right:8px}
+    .contact-info{background:#ecf0f1;border-radius:13px;padding:15px;margin-top:14px;text-align:center}
+    .contact-info p{margin:5px 0;font-size:14px}
+    .phone-number{font-size:18px;font-weight:bold;color:#25d366;margin:10px 0}
   </style>
 </head>
 <body>
@@ -62,7 +66,15 @@
         <li>Hızlı teslimat</li>
         <li>Türkiye geneli kargo</li>
       </ul>
-      <button class="btn" onclick="contact('Toplu Sipariş')">Telegram'dan İletişim</button>
+      <button class="btn" onclick="contact('Toplu Sipariş')">WhatsApp'tan İletişim</button>
+    </div>
+
+    <div class="card">
+      <div class="contact-info">
+        <p><strong>📱 Doğrudan İletişim</strong></p>
+        <div class="phone-number">05359750533</div>
+        <a href="https://wa.me/905359750533?text=Merhaba%2C%20ç%C3%B6p%20po%C5%9Feti%20sipari%C5%9Fi%20i%C3%A7in%20bilgi%20almak%20istiyorum." class="btn phone" style="margin-top:10px">WhatsApp Aç</a>
+      </div>
     </div>
 
     <div class="info">
@@ -71,17 +83,10 @@
   </div>
 
   <script>
-    // BURAYA KENDİ TELEGRAM KULLANICI ADINI YAZ.
-    // Örnek: const telegramUser = "ornek_kullanici";
-    const telegramUser = "KULLANICI_ADIN";
-
     function contact(subject){
-      if(telegramUser === "KULLANICI_ADIN"){
-        alert("Önce index.html içindeki KULLANICI_ADIN kısmını kendi Telegram kullanıcı adınla değiştir.");
-        return;
-      }
+      const phoneNumber = "905359750533";
       const text = encodeURIComponent("Merhaba, " + subject + " için bilgi ve sipariş almak istiyorum.");
-      window.open("https://t.me/" + telegramUser + "?text=" + text, "_blank");
+      window.open("https://wa.me/" + phoneNumber + "?text=" + text, "_blank");
     }
   </script>
 </body>
