@@ -3,51 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WhatsApp Numara Hizmeti</title>
+  <title>Dökme Çöp Poşeti Satışı</title>
   <style>
     *{box-sizing:border-box}
     body{margin:0;font-family:Arial,sans-serif;background:#f2f5f7;color:#17202a}
     .wrap{max-width:520px;margin:auto;padding:20px}
-    .hero{background:#128c7e;color:white;border-radius:22px;padding:28px 22px;text-align:center;box-shadow:0 8px 25px #0002}
+    .hero{background:#2c3e50;color:white;border-radius:22px;padding:28px 22px;text-align:center;box-shadow:0 8px 25px #0002}
     .hero h1{margin:0 0 8px;font-size:28px}
     .hero p{margin:0;opacity:.95}
     .card{background:white;border-radius:18px;padding:18px;margin-top:16px;box-shadow:0 5px 18px #0001}
-    .card h2{margin:0 0 8px;font-size:20px}
+    .card h2{margin:0 0 8px;font-size:20px;color:#2c3e50}
     .card p{margin:7px 0;color:#667}
-    .btn{display:block;width:100%;border:0;border-radius:13px;padding:15px;margin-top:14px;font-size:16px;font-weight:bold;cursor:pointer;background:#25d366;color:white}
-    .btn.alt{background:#128c7e}
+    .price{font-size:18px;font-weight:bold;color:#e74c3c;margin:10px 0}
+    .btn{display:block;width:100%;border:0;border-radius:13px;padding:15px;margin-top:14px;font-size:16px;font-weight:bold;cursor:pointer;background:#e74c3c;color:white}
+    .btn.alt{background:#3498db}
     .info{font-size:13px;text-align:center;color:#667;margin:18px 5px}
+    .features{list-style:none;padding:0;margin:10px 0}
+    .features li{padding:8px 0;border-bottom:1px solid #ecf0f1}
+    .features li:before{content:"✓ ";color:#e74c3c;font-weight:bold;margin-right:8px}
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="hero">
-      <h1>📱 WhatsApp Numara Hizmeti</h1>
-      <p>Türk ve yurtdışı seçenekleri</p>
+      <h1>♻️ Dökme Çöp Poşeti</h1>
+      <p>Ucuz ve Kaliteli Çöp Poşeti Satışı</p>
     </div>
 
     <div class="card">
-      <h2>🇹🇷 Türk WhatsApp</h2>
-      <p>Türkiye numarası seçenekleri</p>
-      <p>Fiyat: <strong>İletişime geçin</strong></p>
-      <button class="btn" onclick="contact('Türk WhatsApp numarası')">Bilgi Al</button>
+      <h2>🟤 Kahverengi Dökme Çöp Poşeti</h2>
+      <p>Dayanıklı ve çevre dostu</p>
+      <ul class="features">
+        <li>30 kg kapasiteli</li>
+        <li>Kalın ve yırtılmaz</li>
+        <li>Toplu satışta indirim</li>
+      </ul>
+      <div class="price">50₺ - 100₺ (Miktara göre)</div>
+      <button class="btn" onclick="contact('Kahverengi Dökme Çöp Poşeti')">Sipariş Ver</button>
     </div>
 
     <div class="card">
-      <h2>🌍 Yurtdışı WhatsApp</h2>
-      <p>Farklı ülke numarası seçenekleri</p>
-      <p>Fiyat: <strong>İletişime geçin</strong></p>
-      <button class="btn alt" onclick="contact('Yurtdışı WhatsApp numarası')">Bilgi Al</button>
+      <h2>⬛ Siyah Dökme Çöp Poşeti</h2>
+      <p>Sağlam ve ekonomik</p>
+      <ul class="features">
+        <li>25-30 kg kapasiteli</li>
+        <li>Endüstri standarı</li>
+        <li>Toplu alışta uygun fiyat</li>
+      </ul>
+      <div class="price">40₺ - 80₺ (Miktara göre)</div>
+      <button class="btn alt" onclick="contact('Siyah Dökme Çöp Poşeti')">Sipariş Ver</button>
     </div>
 
     <div class="card">
-      <h2>💬 Sipariş / Destek</h2>
-      <p>Numara, ülke ve fiyat bilgisi için bizimle iletişime geçin.</p>
-      <button class="btn" onclick="contact('Sipariş ve destek')">Telegram'dan İletişim</button>
+      <h2>📞 Toplu Sipariş / İnceleme</h2>
+      <p>Büyük miktarlarda satış ve özel fiyatlandırma için bize ulaşın.</p>
+      <ul class="features">
+        <li>1000+ adet alışta özel indirim</li>
+        <li>Hızlı teslimat</li>
+        <li>Türkiye geneli kargo</li>
+      </ul>
+      <button class="btn" onclick="contact('Toplu Sipariş')">Telegram'dan İletişim</button>
     </div>
 
     <div class="info">
-      Hizmetleri yalnızca yürürlükteki yasalara ve WhatsApp kurallarına uygun şekilde kullanın.
+      Tüm ürünlerimiz kalite kontrollü ve hızlı teslimat ile sunulmaktadır.
     </div>
   </div>
 
@@ -61,7 +80,7 @@
         alert("Önce index.html içindeki KULLANICI_ADIN kısmını kendi Telegram kullanıcı adınla değiştir.");
         return;
       }
-      const text = encodeURIComponent("Merhaba, " + subject + " hakkında bilgi almak istiyorum.");
+      const text = encodeURIComponent("Merhaba, " + subject + " için bilgi ve sipariş almak istiyorum.");
       window.open("https://t.me/" + telegramUser + "?text=" + text, "_blank");
     }
   </script>
